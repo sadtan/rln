@@ -1,7 +1,7 @@
 var express = require("express")
     router  = express.Router();
 
-const FondoController = require("../controllers/FondoController.js");
+const FondoController = require("../controllers/fondoController.js");
 const controller = new FondoController();
 
 router.get("/", (req, res) => controller.get_all_fondos(req, res));

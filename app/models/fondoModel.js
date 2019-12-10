@@ -5,7 +5,7 @@ var sql = require("./db.js");
 class FondoModel
 {
 
-    GetAllFondos = function(result)
+    GetAllFondos(result)
     {
         sql.query("select fondos.fondo_id, fondos.fondo_nombre, lugares.lugar_lat, lugares.lugar_long FROM fondos INNER JOIN lugares ON fondos.fk_lugar = lugares.lugar_id", (err, res) => 
         {
@@ -20,25 +20,8 @@ class FondoModel
             }
         })
     }
-
-    GetFondoLugar = function(LugarId, result, hola)
-    {
-        sql.query("SELECT lugar_lat, lugar_long FROM lugares WHERE lugar_id = " + LugarId, (err, res) => 
-        {
-            if (err) 
-            {
-                console.log("Fondos Model Error: ", err);
-                result(null, err);
-            }
-            else 
-            {
-
-                result(null, res)
-            }
-        })
-    }
-
-    GetById = function(FondoId, result)
+    
+    GetById(FondoId, result)
     {
         sql.query("SELECT * FROM fondos WHERE fondo_id =" + FondoId, (err, res) =>
         {
@@ -55,4 +38,6 @@ class FondoModel
     }
 
 }
+
+
 module.exports = FondoModel;
