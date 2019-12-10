@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<style>
+    input[type="text"] {
+        border-bottom: 1px solid gray;
+        padding-left: 10px;
+    }
+</style>
+<script src="/scripts/FondoAjaxReq.js"></script>
+<div class="container mt-4 mb-4">
+    <form action="/fondos" method="post">
+        <input type="text" class="form-control-plaintext" name="fondo_id_ajax" id="target"
+            placeholder="Buscar fondo por id">
+    </form>
+    <p id="fondo" class="mt-2">
+    </p>
+    <a href="/fondos" style="float: right" class="mb-2">Ver todos los fondos.</a>
+</div>
+<% include ../partials/footer %>

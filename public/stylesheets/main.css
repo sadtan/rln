@@ -1,0 +1,30 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-image: url("https://wallpaperplay.com/walls/full/e/b/7/129745.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    /* background-attachment: local; */
+    background-position: center 0;
+    background-size: 100% 100vh;
+}
+
+.container {
+    background-color: white;
+    width: 100vh;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+input[type="text"]
+{
+    border-bottom: 1px solid gray;
+    padding-left: 10px;
+}
+
+form 
+{
+    margin: auto;
+    padding: 40px 0 40px 0;
+    
+}
