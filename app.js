@@ -24,7 +24,9 @@ const Fondos  = require("./app/routes/fondoRoutes.js")
 app.use("/fondos", Fondos);
 app.use("/", require("./app/routes/index.js"));
 
+
 port = process.env.PORT || 3000;
+
 app.listen(port, function() {
 	console.log("\t >>> UNPROJECT started at port " + port);
 });
