@@ -1,6 +1,3 @@
-#Los años son guardados como enteros porque no es una fecha exacta con día y mes.
-#Los tipos de dato que aparecen como "lista de objetos" seran almacenados como un cadena de texto que contendrá los objetos en formato tipo JSON. Esto hace más más facil separar los datos cuando se requieran y evita tener que crear otra tabla para estos objetos.
-
 
 show databases;
 use undbtest;
@@ -107,12 +104,10 @@ DELETE CASCADE,
     FOREIGN KEY (fk_hecho) REFERENCES hechos (hecho_id) ON
 DELETE CASCADE
 );
-desc piezas;
 
 insert into hechos (hecho_id, hecho_tipo, hecho_descripcion, hecho_actores, hecho_anio, fk_lugar) values (
 	1, 1, null, null, null, null
 );
-
 
 INSERT INTO lugares(lugar_id, lugar_nombre, lugar_pais, lugar_departamento, lugar_localidad, lugar_direccion, lugar_lat, lugar_long, lugar_tipo) VALUES (
 	1,
@@ -224,5 +219,4 @@ Esta pieza es considerada la pieza emblemática por ser el primer telón elabora
      "nov.-19"
 );
 
-select * from piezas;
 select fondos.fondo_id, fondos.fondo_nombre, fondos.fk_lugar, lugares.lugar_lat, lugares.lugar_long FROM fondos INNER JOIN lugares ON fondos.fk_lugar = lugares.lugar_id;
