@@ -22,11 +22,14 @@ $(document).ready(function()
                 //console.log(data);
                 //data = JSON.parse(data);
                 $('#fondo').html("");
-                if(data[0] != undefined)
+                if(data[0] != undefined) {
+                   
                     for(var i in data[0])
                     {
                         $('#fondo').html($('#fondo').html() + "<strong>" + i  + ":  </strong>" + data[0][i] + "<br>");
                     }
+                    $('#fondo').html($('#fondo').html() + '<hr> <a href= "/fondos/json/' + $('input[name=fondo_id_ajax]').val() + '" class="btn btn-primary" > ver en formato json </a> <br>');
+                }
                 else 
                 {
                     $('#fondo').html("Fondo no encontrado");

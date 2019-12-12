@@ -11,7 +11,6 @@ class FondoModel
         {
             if (err) 
             {
-                console.log("Fondos Model Error: ", err);
                 result(null, err);
             }
             else 
@@ -23,19 +22,21 @@ class FondoModel
     
     GetById(FondoId, result)
     {
-        sql.query("SELECT * FROM fondos WHERE fondo_id =" + FondoId, (err, res) =>
+        sql.query("SELECT * FROM fondos WHERE fondo_id =" + sql.escape(FondoId), (err, res) =>
         {
             if (err) 
             {
-                console.log("Fondos Model Error: ", err);
-                result(null, err);
+                
+                result(err, null);
             }
             else 
             {
+                
                 result(null, res);
             }
         });
     }
+
 
 }
 

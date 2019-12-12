@@ -25,6 +25,29 @@ class TextileController {
         }
         else res.send({data: "Solo numeros."});
     }
+
+    // JSON
+    get_fondo_by_id_json(req, result) {
+        Fondo.GetById(req.params.fondo_id, function(err, fondo) {
+            if (err) {
+                result(err, null)
+            }
+            else {
+                result(null, fondo);
+            }
+        })
+    };
+
+    get_all_fondos_json(result) {
+        Fondo.GetAllFondos(function(err, fondo) {
+            if (err) {
+                result(err, null)
+            }
+            else {
+                result(null, fondo);
+            }
+        })
+    };
 }
 
 module.exports = TextileController;
